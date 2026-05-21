@@ -103,7 +103,7 @@ RUN comfy-node-install \
 WORKDIR /
 
 # Install Python runtime dependencies for the handler
-RUN uv pip install runpod requests websocket-client
+RUN uv pip install runpod requests websocket-client sqlalchemy
 
 # Add application code and scripts
 ADD src/start.sh handler.py test_input.json ./
