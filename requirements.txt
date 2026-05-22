@@ -3,3 +3,7 @@ runpod~=1.7.12
 websocket-client
 requests
 sqlalchemy
+accelerate
+opencv-python-headless
+PyWavelets
+piexif
