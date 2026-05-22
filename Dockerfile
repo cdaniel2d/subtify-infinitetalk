@@ -64,6 +64,10 @@ RUN if [ -n "${CUDA_VERSION_FOR_COMFY}" ]; then \
 RUN if [ "$ENABLE_PYTORCH_UPGRADE" = "true" ]; then \
       uv pip install --force-reinstall torch torchvision torchaudio --index-url ${PYTORCH_INDEX_URL}; \
     fi
+	
+# install ComfyUI's python requirements into the venv
+RUN uv pip install --no-cache-dir -r /comfyui/requirements.txt
+
 
 # Change working directory to ComfyUI
 WORKDIR /comfyui
