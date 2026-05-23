@@ -114,6 +114,8 @@ RUN uv pip install --no-cache-dir runpod requests websocket-client sqlalchemy \
       matplotlib \
       scikit-image \
       ultralytics \
+	  diffusers \
+	  transformers \
       opencv-python-headless \
       PyWavelets \
       piexif \
@@ -124,8 +126,11 @@ RUN uv pip install --no-cache-dir runpod requests websocket-client sqlalchemy \
 	  pyloudnorm \
 	  scipy \
 	  protobuf \
+	  imageio \
+	  imageio-ffmpeg \
 	  dill
 RUN uv pip install --no-cache-dir \
+	git+https://github.com/facebookresearch/sam2 \
     git+https://github.com/facebookresearch/segment-anything.git
 
 # Add application code and scripts
