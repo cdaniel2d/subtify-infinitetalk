@@ -108,7 +108,15 @@ WORKDIR /
 
 # Install Python runtime dependencies for the handler + custom node deps
 RUN uv pip install --no-cache-dir runpod requests websocket-client sqlalchemy \
- && uv pip install --no-cache-dir accelerate opencv-python-headless PyWavelets piexif
+ && uv pip install --no-cache-dir \
+      accelerate \
+      gguf \
+      matplotlib \
+      scikit-image \
+      ultralytics \
+      opencv-python-headless \
+      PyWavelets \
+      piexif
 
 # Add application code and scripts
 ADD src/start.sh handler.py test_input.json ./
