@@ -116,7 +116,17 @@ RUN uv pip install --no-cache-dir runpod requests websocket-client sqlalchemy \
       ultralytics \
       opencv-python-headless \
       PyWavelets \
-      piexif
+      piexif \
+	  ftfy \
+	  einops \
+	  peft>=0.17.0 \
+	  sentencepiece>=0.2.0 \
+	  pyloudnorm \
+	  scipy \
+	  protobuf \
+	  dill
+RUN uv pip install --no-cache-dir \
+    git+https://github.com/facebookresearch/segment-anything.git
 
 # Add application code and scripts
 ADD src/start.sh handler.py test_input.json ./
